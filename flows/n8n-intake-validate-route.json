@@ -1,0 +1,13 @@
+{
+  "name": "Intake → Validate (JSON Schema) → Enrich → Dedupe → CRM Upsert → Assign → Slack Alert",
+  "version": 1,
+  "nodes": [
+    { "id": "trigger_form", "type": "webhook", "notes": "Form submission" },
+    { "id": "validate", "type": "function", "notes": "Validate against lead_intake.schema.json" },
+    { "id": "enrich", "type": "httpRequest", "notes": "Firmographics enrichment" },
+    { "id": "dedupe", "type": "function", "notes": "Check existing by email/domain" },
+    { "id": "crm", "type": "httpRequest", "notes": "HubSpot upsert (deal/contact)" },
+    { "id": "assign", "type": "function", "notes": "Owner assignment rules" },
+    { "id": "slack", "type": "httpRequest", "notes": "Alert channel with summary + score" }
+  ]
+}
