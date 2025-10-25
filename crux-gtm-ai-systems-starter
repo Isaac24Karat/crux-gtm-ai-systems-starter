@@ -1,0 +1,13 @@
+crux-gtm-ai-systems-starter/
+├─ README.md
+├─ schemas/
+│  ├─ lead_intake.schema.json
+│  └─ doc_package.schema.json
+├─ flows/
+│  └─ n8n-intake-validate-route.json
+├─ dashboards/
+│  └─ kpis-overview.md
+├─ runbooks/
+│  ├─ month1-automation-runbook.md
+│  └─ data-health-checks.md
+└─ .gitignore
