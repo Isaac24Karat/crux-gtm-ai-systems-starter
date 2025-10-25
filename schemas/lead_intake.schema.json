@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/lead_intake.schema.json",
+  "title": "Lead Intake",
+  "type": "object",
+  "required": ["companyName", "contactEmail", "intent", "estimatedDealSizeUSD"],
+  "properties": {
+    "companyName": { "type": "string", "minLength": 2 },
+    "contactName": { "type": "string" },
+    "contactEmail": { "type": "string", "format": "email" },
+    "segment": { "type": "string", "enum": ["developer", "manufacturer", "investor", "other"] },
+    "intent": { "type": "string", "enum": ["buy", "sell", "partner", "learn"] },
+    "estimatedDealSizeUSD": { "type": "number", "minimum": 0 },
+    "geo": { "type": "string" },
+    "notes": { "type": "string", "maxLength": 2000 }
+  },
+  "additionalProperties": false
+}
