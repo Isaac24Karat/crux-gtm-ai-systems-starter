@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/doc_package.schema.json",
+  "title": "Doc Package Completeness (Generic)",
+  "type": "object",
+  "required": ["companyName", "primaryContactEmail", "packageChecklist"],
+  "properties": {
+    "companyName": { "type": "string" },
+    "primaryContactEmail": { "type": "string", "format": "email" },
+    "packageChecklist": {
+      "type": "object",
+      "required": ["kyc", "entityDocs", "insurance", "financials"],
+      "properties": {
+        "kyc": { "type": "boolean" },
+        "entityDocs": { "type": "boolean" },
+        "insurance": { "type": "boolean" },
+        "financials": { "type": "boolean" }
+      },
+      "additionalProperties": false
+    },
+    "completenessScore": { "type": "integer", "minimum": 0, "maximum": 100 }
+  },
+  "additionalProperties": false
+}
